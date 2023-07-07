@@ -1,0 +1,155 @@
+{
+	"info": {
+		"_postman_id": "81137ce0-8873-4105-8372-9ced4a5ba05b",
+		"name": "Api-Challange",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20392062"
+	},
+	"item": [
+		{
+			"name": "Create Target",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": " {\r\n     \"id\": \"1\",\r\n     \"url\": \"http://example.2.com\",\r\n     \"value\": 0.6,\r\n     \"maxAcceptsPerDay\": 5,\r\n     \"accept\": {\r\n         \"geoState\": {\r\n             \"$in\": [\"ca\",\"ny\"]\r\n         },\r\n           \"hour\": {\r\n             \"$in\": [ 13,16,18]\r\n           }\r\n     }\r\n }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/api/targets",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"targets"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Targets",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/api/targets",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"targets"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Target By Id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/api/targets/1",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"targets",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Target Max Attempts",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"timestamps\":\"2018-07-24T18:28:59.513Z\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/api/targets/1",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"targets",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Decision",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n     \"geoState\": \"ny\",\r\n     \"publisher\": \"abc\",\r\n     \"timestamp\": \"2018-07-19T16:28:59.513Z\"\r\n }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/route",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"route"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "url",
+			"value": "http://localhost:4000",
+			"type": "string"
+		}
+	]
+}
